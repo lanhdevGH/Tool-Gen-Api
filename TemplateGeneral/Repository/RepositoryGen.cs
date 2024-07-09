@@ -8,7 +8,7 @@ namespace WindowsFormsApp1.TemplateGeneral
 {
     public static class RepositoryGen
     {
-        public static string GenerateIRepositoryContent(string projectName)
+        public static string GenerateIRepositoryContent(string projectName, string nameRepoDir)
         {
             return $@"
 using System;
@@ -18,7 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
 
-namespace {projectName}.Repositories
+namespace {projectName}.{nameRepoDir}
 {{
     public interface IRepository<T> where T : class
     {{

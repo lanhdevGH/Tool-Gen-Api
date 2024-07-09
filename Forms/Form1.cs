@@ -39,6 +39,10 @@ namespace WindowsFormsApp1
         {
             using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
             {
+                if (!string.IsNullOrEmpty(txtProjectPath.Text))
+                {
+                    folderBrowserDialog.SelectedPath = txtProjectPath.Text;
+                }
                 if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
                 {
                     txtProjectPath.Text = folderBrowserDialog.SelectedPath;

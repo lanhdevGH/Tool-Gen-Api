@@ -15,14 +15,16 @@ namespace WindowsFormsApp1.TemplateGeneral
             string[] modelFiles = Directory.GetFiles(modelsPath, "*.cs");
 
             // Tạo thư mục repository
-            var repoDirPath = Path.Combine(projectPath, "Repositories");
+            var nameRepoDir = "Repositories";
+            var repoDirPath = Path.Combine(projectPath, nameRepoDir);
             Directory.CreateDirectory(repoDirPath);
 
             // Sinh file IRepository
             // Lấy tên project
-            string IRepoContent = RepositoryGen.GenerateIRepositoryContent(projectPath);
+            var nameProject = Path.GetFileName(projectPath);
+            string IRepoContent = RepositoryGen.GenerateIRepositoryContent(nameProject, nameRepoDir);
 
-            var a = 0;
+            
 
         }
     }
